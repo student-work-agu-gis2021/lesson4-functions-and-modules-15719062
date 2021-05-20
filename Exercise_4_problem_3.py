@@ -29,7 +29,6 @@
 # 
 # 1. Store the Fahrenheit temperatures below into the list `temp_data`.
 
-
 # List of half-hourly temperature values (in degrees Fahrenheit) for one week
 temp_data =  [19, 21, 21, 21, 23, 23, 23, 21, 19, 21, 19, 21, 23, 27, 27, 28, 30, 30, 32, 32, 32, 32, 
               34, 34, 34, 36, 36, 36, 36, 36, 36, 34, 34, 34, 34, 34, 34, 32, 30, 30, 30, 28, 28, 27,
@@ -48,7 +47,6 @@ temp_data =  [19, 21, 21, 21, 23, 23, 23, 21, 19, 21, 19, 21, 23, 27, 27, 28, 30
               36, 36, 36, 36, 36, 32, 32, 32, 32, 32, 32, 32, 32, 30, 30, 30, 30, 30, 30, 30, 30, 30,
               30, 30, 30, 30, 28, 28]
 
-
 # #### Part 2 (continues)
 # 
 # 2. Import the `fahr_to_celsius` and `temp_classifier` functions from your `temp_functions.py` 
@@ -63,8 +61,14 @@ temp_data =  [19, 21, 21, 21, 23, 23, 23, 21, 19, 21, 19, 21, 23, 27, 27, 28, 30
 #         2. Create a new variable called `temp_class` in which you should assign the temperature class number (0, 1, 2, or 3) using the `temp_classifier` function
 #         3. Add the `temp_class` value to the `temp_classes` list
 
-
 # YOUR CODE HERE
+from temp_functions import temp_classifier,fahr_to_celsius
+
+temp_classes = []
+
+for data in temp_data:
+  temp_celsius=temp_classifier(fahr_to_celsius(data))
+  temp_classes.append(temp_celsius)
 
 # #### Part 2 (continues)
 # 
@@ -75,7 +79,10 @@ temp_data =  [19, 21, 21, 21, 23, 23, 23, 21, 19, 21, 19, 21, 23, 27, 27, 28, 30
 #   
 
 # YOUR CODE HERE
-
+zeros=temp_classes.count(0)
+ones=temp_classes.count(1)
+twos=temp_classes.count(2)
+threes=temp_classes.count(3)
 # **TIP**: You might want to consider using a [**count()** function](https://www.tutorialspoint.com/python3/list_count.htm) OR a for loop for this.
 
 # ### Problem 3 tests
